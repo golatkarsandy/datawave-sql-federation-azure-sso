@@ -16,9 +16,10 @@ This repository is the **SSO‑enabled version** of the project.
 
 ```mermaid
 flowchart LR
-    User((User Browser)) -->|Login Redirect| AzureAD((Azure AD))
-    AzureAD -->|OAuth2 Token| TrinoUI[Trino Web UI (HTTPS + SSO)]
+    User((User Browser)) -->|Login Redirect| AzureAD[Azure AD]
+    AzureAD -->|OAuth2 Token| TrinoUI[Trino Web UI]
 
     Metabase -->|JDBC + Password Auth| TrinoEngine[Trino Engine]
     TrinoEngine --> MySQL[(MySQL)]
     TrinoEngine --> Postgres[(PostgreSQL)]
+
